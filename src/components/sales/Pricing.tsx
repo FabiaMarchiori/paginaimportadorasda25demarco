@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Zap, Crown } from "lucide-react";
+import LeadCaptureForm from "./LeadCaptureForm";
 
 const plans = [
   {
@@ -19,6 +21,7 @@ const plans = [
     cta: "Assinar Mensal",
     popular: false,
     savings: null,
+    planKey: "mensal" as const,
   },
   {
     name: "Anual",
@@ -38,15 +41,20 @@ const plans = [
     cta: "Quero Economizar",
     popular: true,
     savings: "Economize R$177/ano",
+    planKey: "anual" as const,
   },
 ];
 
 const Pricing = () => {
-  const handleWhatsAppClick = (plan: string) => {
-    const message = encodeURIComponent(
-      `Olá! Tenho interesse no plano ${plan} do Importadoras da 25 de Março.`
-    );
-    window.open(`https://wa.me/5511999999999?text=${message}`, "_blank");
+  const [formOpen, setFormOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{
+    key: "mensal" | "anual";
+    price: string;
+  } | null>(null);
+
+  const handlePlanSelect = (planKey: "mensal" | "anual", price: string) => {
+    setSelectedPlan({ key: planKey, price });
+    setFormOpen(true);
   };
 
   return (
@@ -158,7 +166,7 @@ const Pricing = () => {
                 variant={plan.popular ? "hero" : "outline"}
                 size="lg"
                 className="w-full"
-                onClick={() => handleWhatsAppClick(plan.name)}
+                onClick={() => handlePlanSelect(plan.planKey, plan.price)}
               >
                 {plan.cta}
               </Button>
@@ -180,6 +188,16 @@ const Pricing = () => {
           </p>
         </div>
       </div>
+
+      {/* Lead Capture Form */}
+      {selectedPlan && (
+        <LeadCaptureForm
+          open={formOpen}
+          onOpenChange={setFormOpen}
+          planSelected={selectedPlan.key}
+          planPrice={`R$${selectedPlan.price}`}
+        />
+      )}
     </section>
   );
 };
