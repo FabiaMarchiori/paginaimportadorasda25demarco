@@ -25,6 +25,7 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          variant: "hsl(var(--primary-variant))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -41,6 +42,7 @@ export default {
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
+          variant: "hsl(var(--accent-variant))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -51,6 +53,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        gold: "hsl(var(--gold))",
+      },
+      boxShadow: {
+        elegant: "var(--shadow-elegant)",
+        soft: "var(--shadow-soft)",
+        glow: "var(--shadow-glow)",
+      },
+      transition: {
+        smooth: "var(--transition-smooth)",
       },
       borderRadius: {
         lg: "var(--radius)",
