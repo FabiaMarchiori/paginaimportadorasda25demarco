@@ -26,7 +26,7 @@ const Hero = () => {
           <div className="w-full lg:w-1/2 text-center lg:text-left text-primary-foreground">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-primary-foreground/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Star className="w-4 h-4 fill-accent text-accent" />
+              <Star className="w-4 h-4 fill-orange text-orange" />
               <span className="text-sm font-medium">+5.000 empreendedores já usam</span>
             </div>
 
@@ -52,8 +52,8 @@ const Hero = () => {
                 "Suporte via WhatsApp Exclusivo",
               ].map((benefit, index) => (
                 <li key={index} className="flex items-center gap-3 justify-center lg:justify-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent flex items-center justify-center" aria-hidden="true">
-                    <Check className="w-4 h-4 text-accent-foreground" />
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange flex items-center justify-center" aria-hidden="true">
+                    <Check className="w-4 h-4 text-orange-foreground" />
                   </div>
                   <span className="text-base md:text-lg">{benefit}</span>
                 </li>
@@ -100,7 +100,7 @@ const Hero = () => {
               <div className="text-left">
                 <div className="flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                    <Star key={i} className="w-4 h-4 fill-orange text-orange" />
                   ))}
                 </div>
                 <p className="text-sm text-primary-foreground/80">4.9/5 de mais de 2.300 avaliações</p>
