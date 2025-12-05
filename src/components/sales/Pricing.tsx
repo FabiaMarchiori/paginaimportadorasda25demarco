@@ -6,42 +6,46 @@ import LeadCaptureForm from "./LeadCaptureForm";
 const plans = [
   {
     name: "Mensal",
-    price: "29",
-    originalPrice: "49",
+    price: "27",
     period: "/mês",
-    description: "Acesso completo mensal",
+    description: "Acesso imediato ao aplicativo",
     icon: Zap,
     features: [
-      "Acesso a 260+ fornecedores",
-      "Contatos de WhatsApp",
-      "Endereços completos",
-      "Atualizações semanais",
-      "Suporte via chat",
+      "Acesso imediato ao aplicativo",
+      "Área de Membro estilo Netflix",
+      "+200 fornecedores verificados",
+      "Acesso aos 15 nichos exclusivos",
+      "Novos fornecedores semanais",
+      "R$ 408 em bônus inclusos",
+      "Garantia de 7 dias",
+      "Suporte via WhatsApp",
     ],
-    cta: "Assinar Mensal",
+    cta: "Quero Acesso Agora",
     popular: false,
     savings: null,
     planKey: "mensal" as const,
   },
   {
     name: "Anual",
-    price: "19",
-    originalPrice: "29",
-    period: "/mês",
-    description: "Melhor custo-benefício",
+    price: "147",
+    priceMonthly: "12,25",
+    period: "/ano",
+    description: "Economia máxima garantida",
     icon: Crown,
     features: [
-      "Tudo do plano Mensal +",
-      "Grupo VIP no WhatsApp",
-      "Suporte prioritário",
-      "Novos fornecedores em primeira mão",
-      "Bônus: Guia de Negociação",
-      "Acesso a promoções exclusivas",
+      "Economize R$ 177 no ano",
+      "Todos os benefícios do plano mensal",
+      "Acesso garantido por 12 meses",
+      "Bônus mensal liberado",
+      "Atualizações semanais",
+      "Garantia de 7 dias",
+      "Suporte via WhatsApp",
     ],
-    cta: "Quero Economizar",
+    cta: "Quero Economizar Agora",
     popular: true,
-    savings: "Economize R$177/ano",
+    savings: "Mais Vendido",
     planKey: "anual" as const,
+    priceEquivalent: "R$ 12,25/mês",
   },
 ];
 
@@ -66,8 +70,8 @@ const Pricing = () => {
             Planos e Preços
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-6">
-            Escolha seu{" "}
-            <span className="text-gradient">plano</span>
+            Escolha o Plano{" "}
+            <span className="text-gradient">Ideal para Você</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Comece a lucrar hoje mesmo com acesso aos melhores fornecedores.
@@ -126,11 +130,6 @@ const Pricing = () => {
 
               {/* Price */}
               <div className="mb-6">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-muted-foreground line-through text-lg">
-                    R${plan.originalPrice}
-                  </span>
-                </div>
                 <div className="flex items-baseline gap-1">
                   <span className="text-sm text-foreground">R$</span>
                   <span className="text-5xl font-extrabold text-gradient">
@@ -140,7 +139,7 @@ const Pricing = () => {
                 </div>
                 {plan.popular && (
                   <p className="text-sm text-accent font-semibold mt-2">
-                    = R$228/ano (ao invés de R$348)
+                    Equivale a R$ 12,25/mês
                   </p>
                 )}
               </div>
@@ -163,7 +162,7 @@ const Pricing = () => {
 
               {/* CTA */}
               <Button
-                variant={plan.popular ? "hero" : "outline"}
+                variant="hero"
                 size="lg"
                 className="w-full"
                 onClick={() => handlePlanSelect(plan.planKey, plan.price)}

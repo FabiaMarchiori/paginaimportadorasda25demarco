@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "@/components/sales/Hero";
 import Benefits from "@/components/sales/Benefits";
+import BonusSection from "@/components/sales/BonusSection";
+import CategoriesSection from "@/components/sales/CategoriesSection";
 import SocialProof from "@/components/sales/SocialProof";
 import Pricing from "@/components/sales/Pricing";
 import FAQ, { faqData } from "@/components/sales/FAQ";
@@ -101,6 +103,8 @@ const SalesPage = () => {
       <main>
         <Hero />
         <Benefits />
+        <BonusSection />
+        <CategoriesSection />
         <SocialProof />
         <Pricing />
         <FAQ />
