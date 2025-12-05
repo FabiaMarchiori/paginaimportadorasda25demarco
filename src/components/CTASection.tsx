@@ -24,7 +24,7 @@ const CTASection = () => {
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center text-primary-foreground">
           {/* Urgency badge */}
-          <div className="inline-flex items-center gap-2 bg-accent px-6 py-3 rounded-full mb-8 animate-pulse-glow">
+          <div className="inline-flex items-center gap-2 bg-orange text-orange-foreground px-6 py-3 rounded-full mb-8 animate-pulse-glow">
             <Clock className="w-5 h-5" />
             <span className="font-bold">Oferta expira em breve!</span>
           </div>
@@ -34,7 +34,7 @@ const CTASection = () => {
             <span className="relative inline-block">
               seu negócio?
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--accent))" strokeWidth="4" strokeLinecap="round"/>
+                <path d="M2 8C50 2 150 2 198 8" stroke="hsl(var(--orange))" strokeWidth="4" strokeLinecap="round"/>
               </svg>
             </span>
           </h2>
@@ -47,7 +47,7 @@ const CTASection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
-              variant="accent"
+              variant="hero"
               size="xl"
               onClick={scrollToPricing}
               className="group"
