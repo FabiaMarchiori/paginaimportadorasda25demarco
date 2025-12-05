@@ -43,9 +43,10 @@ const CTA = () => {
             size="xl"
             onClick={scrollToPricing}
             className="group text-lg px-12"
+            aria-label="Ver planos e começar agora"
           >
             Quero Começar Agora
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Button>
 
           {/* Trust elements */}
