@@ -90,8 +90,11 @@ const SocialProof = () => {
               <div className="flex items-center gap-4 pt-4 border-t border-border">
                 <img 
                   src={testimonial.avatar} 
-                  alt={testimonial.name}
+                  alt={`Foto de ${testimonial.name}, ${testimonial.role}`}
                   className="w-12 h-12 rounded-full object-cover"
+                  loading="lazy"
+                  width={48}
+                  height={48}
                 />
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.name}</p>

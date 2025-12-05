@@ -39,14 +39,14 @@ const Hero = () => {
           </p>
 
           {/* Benefits list */}
-          <ul className="flex flex-wrap justify-center gap-6 mb-12">
+          <ul className="flex flex-wrap justify-center gap-6 mb-12" aria-label="Benefícios principais">
             {[
               "260+ fornecedores verificados",
               "Contatos atualizados",
               "Suporte via WhatsApp",
             ].map((benefit, index) => (
               <li key={index} className="flex items-center gap-2">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent flex items-center justify-center">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent flex items-center justify-center" aria-hidden="true">
                   <Check className="w-4 h-4 text-accent-foreground" />
                 </div>
                 <span className="text-lg">{benefit}</span>
@@ -60,9 +60,10 @@ const Hero = () => {
             size="xl" 
             onClick={scrollToPricing}
             className="group text-lg px-12"
+            aria-label="Ver planos e preços"
           >
             Quero Acesso Agora
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Button>
 
           {/* Trust badges */}
