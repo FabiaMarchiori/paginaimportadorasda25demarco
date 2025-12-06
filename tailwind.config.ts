@@ -58,6 +58,14 @@ export default {
           DEFAULT: "hsl(var(--orange))",
           foreground: "hsl(var(--orange-foreground))",
         },
+        cyan: "hsl(var(--cyan))",
+        magenta: "hsl(var(--magenta))",
+        neon: {
+          blue: "hsl(210 100% 50%)",
+          cyan: "hsl(180 100% 60%)",
+          purple: "hsl(280 100% 60%)",
+          orange: "hsl(30 100% 60%)",
+        },
       },
       boxShadow: {
         elegant: "var(--shadow-elegant)",
