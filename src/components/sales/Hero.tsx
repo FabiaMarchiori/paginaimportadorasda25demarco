@@ -185,7 +185,7 @@ const Hero = () => {
                     <Check className="w-5 h-5 text-neon-cyan" />
                   </div>
                   <div>
-                    <p className="text-xs text-foreground/60">Fornecedores</p>
+                    <p className="text-xs text-foreground/60">Importadoras</p>
                     <p className="text-lg font-bold text-neon-cyan">260+</p>
                   </div>
                 </div>

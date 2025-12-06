@@ -67,7 +67,7 @@ const CategoriesSection = () => {
             </span>
           </h2>
           <p className="text-lg text-foreground/70">
-            15 nichos diferentes para você encontrar os fornecedores ideais para o seu negócio.
+            15 nichos diferentes para você encontrar as importadoras ideais para o seu negócio.
           </p>
         </div>
 

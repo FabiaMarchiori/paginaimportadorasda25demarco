@@ -55,8 +55,8 @@ const CTA = () => {
           </h2>
 
           <p className="text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl mx-auto">
-            Junte-se a mais de 5.000 empreendedores que já estão lucrando com os
-            melhores fornecedores da 25 de Março.
+            Junte-se a mais de 5.000 empreendedores que já estão lucrando com as
+            melhores importadoras da 25 de Março.
           </p>
 
           {/* CTA Buttons with neon effects */}

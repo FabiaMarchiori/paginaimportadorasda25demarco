@@ -64,7 +64,7 @@ export default {
           blue: "hsl(210 100% 50%)",
           cyan: "hsl(180 100% 60%)",
           purple: "hsl(280 100% 60%)",
-          orange: "hsl(30 100% 60%)",
+          orange: "hsl(18 100% 55%)",
         },
       },
       boxShadow: {

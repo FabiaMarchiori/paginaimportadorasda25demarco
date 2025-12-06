@@ -13,24 +13,24 @@ export const faqData = [
       "Sim! O app funciona em Android e iPhone. Também pode ser acessado pelo computador através do navegador.",
   },
   {
-    question: "Os fornecedores são realmente verificados?",
+    question: "As importadoras são realmente verificadas?",
     answer:
-      "Absolutamente! Nossa equipe verifica cada fornecedor antes de incluir no app. Garantimos que são empresas reais, com CNPJ ativo e boa reputação.",
+      "Absolutamente! Nossa equipe verifica cada importadora antes de incluir no app. Garantimos que são empresas reais, com CNPJ ativo e boa reputação.",
   },
   {
     question: "Preciso ir presencialmente na 25 de Março?",
     answer:
-      "Não necessariamente! Muitos fornecedores trabalham com envio para todo o Brasil. Você pode fazer pedidos pelo WhatsApp e receber em casa.",
+      "Não necessariamente! Muitas importadoras trabalham com envio para todo o Brasil. Você pode fazer pedidos pelo WhatsApp e receber em casa.",
   },
   {
     question: "Com que frequência o app é atualizado?",
     answer:
-      "Adicionamos novos fornecedores toda semana. Além disso, verificamos constantemente se os contatos estão ativos e atualizados.",
+      "Adicionamos novas importadoras toda semana. Além disso, verificamos constantemente se os contatos estão ativos e atualizados.",
   },
   {
     question: "Qual a diferença entre os planos?",
     answer:
-      "O plano Mensal dá acesso a todos os 260+ fornecedores com renovação mensal. O Anual inclui tudo mais grupo VIP, suporte prioritário e economia de R$177 por ano.",
+      "O plano Mensal dá acesso a todas as 260+ importadoras com renovação mensal. O Anual inclui tudo mais grupo VIP, suporte prioritário e economia.",
   },
   {
     question: "Como funciona a garantia?",
@@ -45,7 +45,7 @@ export const faqData = [
   {
     question: "O grupo VIP é realmente útil?",
     answer:
-      "O grupo VIP é onde acontece a mágica! Lá compartilhamos fornecedores exclusivos, dicas de negociação, alertas de oportunidades e networking com milhares de empreendedores.",
+      "O grupo VIP é onde acontece a mágica! Lá compartilhamos importadoras exclusivas, dicas de negociação, alertas de oportunidades e networking com milhares de empreendedores.",
   },
 ];
 
