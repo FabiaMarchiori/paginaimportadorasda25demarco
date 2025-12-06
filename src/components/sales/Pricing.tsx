@@ -94,101 +94,101 @@ const Pricing = () => {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto px-2 sm:px-0">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative glass-card rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 animate-fade-in ${
+              className={`relative glass-card rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 w-full max-w-full transition-all duration-300 hover:-translate-y-2 animate-fade-in ${
                 plan.popular
-                  ? "neon-border scale-105"
+                  ? "neon-border md:scale-105"
                   : "border border-neon-cyan/20 hover:border-neon-cyan/50"
               }`}
               style={{ 
                 animationDelay: `${index * 0.2}s`,
-                boxShadow: plan.popular ? '0 0 40px hsl(var(--neon-cyan) / 0.2)' : undefined
+                boxShadow: plan.popular ? '0 0 30px hsl(var(--neon-cyan) / 0.15)' : undefined
               }}
             >
               {/* Popular badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-neon-cyan to-neon-blue text-background px-6 py-2 rounded-full text-sm font-bold">
+                <div className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-neon-cyan to-neon-blue text-background px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold whitespace-nowrap">
                   {plan.savings}
                 </div>
               )}
 
               {/* Bonus badge */}
               {plan.bonusBadge && (
-                <div className="absolute -top-4 right-4 bg-neon-orange text-background px-4 py-1 rounded-full text-xs font-bold">
+                <div className="absolute -top-3 md:-top-4 right-2 md:right-4 bg-neon-orange text-background px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold whitespace-nowrap">
                   {plan.bonusBadge}
                 </div>
               )}
 
               {/* Plan icon */}
               <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
+                className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 ${
                   plan.popular 
                     ? "bg-gradient-to-br from-neon-cyan to-neon-blue glow-secondary" 
                     : "bg-neon-cyan/10 border border-neon-cyan/30"
                 }`}
               >
                 <plan.icon
-                  className={`w-8 h-8 ${
+                  className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${
                     plan.popular ? "text-background" : "text-neon-cyan"
                   }`}
                 />
               </div>
 
               {/* Plan name */}
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                 {plan.name}
               </h3>
-              <p className="text-foreground/60 mb-6">{plan.description}</p>
+              <p className="text-sm sm:text-base text-foreground/60 mb-4 md:mb-6">{plan.description}</p>
 
               {/* Price with gradient */}
-              <div className="mb-6">
+              <div className="mb-4 md:mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-sm text-foreground">R$</span>
-                  <span className="text-5xl font-extrabold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
+                  <span className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
                     {plan.price}
                   </span>
                   <span className="text-foreground/60">{plan.period}</span>
                 </div>
                 {plan.priceEquivalent && (
-                  <p className="text-sm text-neon-orange font-semibold mt-2">
+                  <p className="text-xs sm:text-sm text-neon-orange font-semibold mt-2">
                     {plan.priceEquivalent}
                   </p>
                 )}
               </div>
 
               {/* Features */}
-              <ul className="space-y-4 mb-4">
+              <ul className="space-y-3 md:space-y-4 mb-4">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
+                  <li key={i} className="flex items-start gap-2 sm:gap-3">
                     <div
-                      className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                      className={`flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center mt-0.5 ${
                         plan.popular 
                           ? "bg-neon-cyan glow-secondary" 
                           : "bg-neon-cyan/20 border border-neon-cyan/50"
                       }`}
                     >
-                      <Check className={`w-3 h-3 ${plan.popular ? "text-background" : "text-neon-cyan"}`} />
+                      <Check className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${plan.popular ? "text-background" : "text-neon-cyan"}`} />
                     </div>
-                    <span className="text-foreground/80">{feature}</span>
+                    <span className="text-sm sm:text-base text-foreground/80">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Footnote or closing text */}
               {plan.footnote && (
-                <p className="text-xs text-foreground/50 italic mb-6">{plan.footnote}</p>
+                <p className="text-xs text-foreground/50 italic mb-4 md:mb-6">{plan.footnote}</p>
               )}
               {plan.closingText && (
-                <p className="text-sm text-neon-cyan/80 font-medium mb-6">{plan.closingText}</p>
+                <p className="text-xs sm:text-sm text-neon-cyan/80 font-medium mb-4 md:mb-6">{plan.closingText}</p>
               )}
 
               {/* CTA */}
               <Button
                 size="lg"
-                className={`w-full font-bold transition-all duration-300 ${
+                className={`w-full text-sm sm:text-base font-bold transition-all duration-300 ${
                   plan.popular
                     ? "bg-neon-orange hover:bg-neon-orange/90 text-background hover-glow-orange"
                     : "bg-neon-cyan/20 hover:bg-neon-cyan/30 text-neon-cyan border border-neon-cyan/50 hover-glow"
@@ -202,7 +202,7 @@ const Pricing = () => {
         </div>
 
         {/* Guarantee with glass effect */}
-        <div className="text-center mt-16 max-w-2xl mx-auto glass-card rounded-2xl p-8 neon-border-cyan">
+        <div className="text-center mt-12 md:mt-16 max-w-2xl mx-auto glass-card rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 neon-border-cyan mx-2 sm:mx-auto">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 mb-6 glow-secondary">
             <div className="text-4xl">🛡️</div>
           </div>
