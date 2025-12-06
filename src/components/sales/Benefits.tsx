@@ -2,10 +2,8 @@ import {
   MapPin, 
   ShieldCheck, 
   TrendingUp, 
-  Users, 
   Clock, 
   MessageCircle,
-  Package,
   Zap
 } from "lucide-react";
 
@@ -26,11 +24,6 @@ const benefits = [
     description: "Preços exclusivos de atacado para maximizar seu lucro.",
   },
   {
-    icon: Users,
-    title: "Grupo VIP WhatsApp",
-    description: "Comunidade exclusiva com dicas e networking.",
-  },
-  {
     icon: Clock,
     title: "Atualizações Semanais",
     description: "Novos fornecedores adicionados toda semana.",
@@ -39,11 +32,6 @@ const benefits = [
     icon: MessageCircle,
     title: "Suporte Dedicado",
     description: "Equipe pronta para te ajudar a encontrar o ideal.",
-  },
-  {
-    icon: Package,
-    title: "Categorias Diversas",
-    description: "Eletrônicos, vestuário, acessórios, brinquedos e mais.",
   },
   {
     icon: Zap,
@@ -58,7 +46,7 @@ const Benefits = () => {
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
+          <span className="inline-block text-primary font-semibold text-xl md:text-2xl tracking-wider mb-4">
             Por que escolher o App
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-6">
@@ -72,7 +60,7 @@ const Benefits = () => {
         </div>
 
         {/* Benefits grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -92,12 +80,11 @@ const Benefits = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-border">
+        <div className="grid grid-cols-3 gap-8 mt-20 pt-16 border-t border-border">
           {[
             { value: "5.000+", label: "Usuários ativos" },
             { value: "260+", label: "Fornecedores" },
             { value: "98%", label: "Satisfação" },
-            { value: "24h", label: "Suporte" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-3xl md:text-4xl font-extrabold text-gradient mb-2">
