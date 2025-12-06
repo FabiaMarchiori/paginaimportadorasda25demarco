@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Sparkles } from "lucide-react";
 
 const testimonials = [
   {
@@ -47,58 +47,74 @@ const testimonials = [
 
 const SocialProof = () => {
   return (
-    <section id="testimonials" className="py-20 lg:py-28 bg-background">
-      <div className="container">
+    <section id="social-proof" className="py-20 lg:py-28 bg-background relative overflow-hidden">
+      {/* Futuristic Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-neon-cyan/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-            Depoimentos Reais
+          <span className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full neon-border-cyan mb-6">
+            <Sparkles className="w-4 h-4 text-neon-cyan animate-pulse-neon" />
+            <span className="text-neon-cyan font-semibold text-sm uppercase tracking-wider">Depoimentos Reais</span>
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-6">
-            Quem usa, <span className="text-gradient">recomenda</span>
+            Quem usa,{" "}
+            <span className="bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple bg-clip-text text-transparent">
+              recomenda
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-foreground/70">
             Milhares de empreendedoras já transformaram seus negócios com o Importadoras da 25.
           </p>
         </div>
 
-        {/* Testimonials grid */}
+        {/* Testimonials grid with futuristic cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-card rounded-2xl p-6 lg:p-8 shadow-card hover:shadow-soft transition-all duration-300 border border-border/50 group"
+              className="relative glass-card rounded-2xl p-6 lg:p-8 neon-border hover-glow transition-all duration-300 group animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Quote className="w-12 h-12 text-primary" />
+              {/* Quote icon with glow */}
+              <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                <Quote className="w-12 h-12 text-neon-cyan" />
               </div>
 
-              {/* Rating */}
+              {/* Rating with neon stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                  <Star key={i} className="w-5 h-5 fill-neon-orange text-neon-orange" />
                 ))}
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6">
+              <p className="text-foreground/90 leading-relaxed mb-6">
                 "{testimonial.content}"
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
-                <img 
-                  src={testimonial.avatar} 
-                  alt={`Foto de ${testimonial.name}, ${testimonial.role}`}
-                  className="w-12 h-12 rounded-full object-cover"
-                  loading="lazy"
-                  width={48}
-                  height={48}
-                />
+              {/* Author with glowing avatar */}
+              <div className="flex items-center gap-4 pt-4 border-t border-neon-cyan/20">
+                <div className="relative">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={`Foto de ${testimonial.name}, ${testimonial.role}`}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-neon-cyan/50"
+                    loading="lazy"
+                    width={48}
+                    height={48}
+                  />
+                  <div className="absolute inset-0 rounded-full bg-neon-cyan/20 blur-md -z-10" />
+                </div>
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <p className="font-semibold text-foreground group-hover:text-neon-cyan transition-colors">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-sm text-foreground/60">{testimonial.role}</p>
                 </div>
               </div>
             </div>
