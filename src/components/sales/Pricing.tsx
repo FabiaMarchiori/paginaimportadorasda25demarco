@@ -5,47 +5,46 @@ import LeadCaptureForm from "./LeadCaptureForm";
 
 const plans = [
   {
-    name: "Mensal",
-    price: "27",
+    name: "Plano Mensal",
+    price: "47",
     period: "/mês",
-    description: "Acesso imediato ao aplicativo",
+    description: "Para quem deseja experimentar com flexibilidade.",
     icon: Zap,
     features: [
-      "Acesso imediato ao aplicativo",
-      "Área de Membro estilo Netflix",
-      "+200 fornecedores verificados",
-      "Acesso aos 15 nichos exclusivos",
-      "Novos fornecedores semanais",
-      "R$ 408 em bônus inclusos",
-      "Garantia de 7 dias",
-      "Suporte via WhatsApp",
+      "Acesso completo à Lista de Fornecedores",
+      "Atualizações semanais",
+      "Suporte básico",
+      "Cancelamento simples a qualquer momento",
     ],
-    cta: "Quero Acesso Agora",
+    cta: "Assinar Mensal",
     popular: false,
     savings: null,
     planKey: "mensal" as const,
+    footnote: "Melhor para testar, mas não inclui todos os bônus premium.",
   },
   {
-    name: "Anual",
-    price: "147",
-    priceMonthly: "12,25",
+    name: "Plano Anual — Mais Vantajoso",
+    price: "97",
+    priceMonthly: "8",
     period: "/ano",
-    description: "Economia máxima garantida",
+    description: "Economize +80% e receba todos os benefícios completos.",
     icon: Crown,
     features: [
-      "Economize R$ 177 no ano",
-      "Todos os benefícios do plano mensal",
-      "Acesso garantido por 12 meses",
-      "Bônus mensal liberado",
-      "Atualizações semanais",
-      "Garantia de 7 dias",
-      "Suporte via WhatsApp",
+      "Acesso completo à Lista de Fornecedores",
+      "Atualizações semanais ilimitadas",
+      "Suporte prioritário",
+      "Acesso total à SOPH — sua mentora de IA",
+      "Novas ferramentas e módulos liberados automaticamente",
+      "Acesso imediato a conteúdos exclusivos",
+      "Garantia de economia: menos de R$ 9/mês",
     ],
-    cta: "Quero Economizar Agora",
+    cta: "Garantir Plano Anual (Recomendado)",
     popular: true,
-    savings: "Mais Vendido",
+    savings: "Mais Escolhido",
     planKey: "anual" as const,
-    priceEquivalent: "R$ 12,25/mês",
+    priceEquivalent: "Menos de R$ 9/mês",
+    bonusBadge: "Melhor custo-benefício",
+    closingText: "A escolha perfeita para quem quer crescer com segurança, organização e suporte inteligente.",
   },
 ];
 
@@ -112,14 +111,14 @@ const Pricing = () => {
               {/* Popular badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-neon-cyan to-neon-blue text-background px-6 py-2 rounded-full text-sm font-bold">
-                  Mais Popular
+                  {plan.savings}
                 </div>
               )}
 
-              {/* Savings badge */}
-              {plan.savings && (
+              {/* Bonus badge */}
+              {plan.bonusBadge && (
                 <div className="absolute -top-4 right-4 bg-neon-orange text-background px-4 py-1 rounded-full text-xs font-bold">
-                  {plan.savings}
+                  {plan.bonusBadge}
                 </div>
               )}
 
@@ -153,15 +152,15 @@ const Pricing = () => {
                   </span>
                   <span className="text-foreground/60">{plan.period}</span>
                 </div>
-                {plan.popular && (
+                {plan.priceEquivalent && (
                   <p className="text-sm text-neon-orange font-semibold mt-2">
-                    Equivale a R$ 12,25/mês
+                    {plan.priceEquivalent}
                   </p>
                 )}
               </div>
 
               {/* Features */}
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 mb-4">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div
@@ -177,6 +176,14 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Footnote or closing text */}
+              {plan.footnote && (
+                <p className="text-xs text-foreground/50 italic mb-6">{plan.footnote}</p>
+              )}
+              {plan.closingText && (
+                <p className="text-sm text-neon-cyan/80 font-medium mb-6">{plan.closingText}</p>
+              )}
 
               {/* CTA */}
               <Button
