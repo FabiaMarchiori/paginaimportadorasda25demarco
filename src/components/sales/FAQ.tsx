@@ -28,24 +28,9 @@ export const faqData = [
       "Adicionamos novas importadoras toda semana. Além disso, verificamos constantemente se os contatos estão ativos e atualizados.",
   },
   {
-    question: "Qual a diferença entre os planos?",
-    answer:
-      "O plano Mensal dá acesso a todas as 260+ importadoras com renovação mensal. O Anual inclui tudo mais grupo VIP, suporte prioritário e economia.",
-  },
-  {
     question: "Como funciona a garantia?",
     answer:
       "Você tem 7 dias para testar o app. Se não gostar, é só enviar uma mensagem que devolvemos 100% do valor, sem perguntas.",
-  },
-  {
-    question: "Posso parcelar o pagamento?",
-    answer:
-      "Sim! Aceitamos cartão de crédito em até 12x. Também aceitamos Pix com desconto adicional.",
-  },
-  {
-    question: "O grupo VIP é realmente útil?",
-    answer:
-      "O grupo VIP é onde acontece a mágica! Lá compartilhamos importadoras exclusivas, dicas de negociação, alertas de oportunidades e networking com milhares de empreendedores.",
   },
 ];
 
