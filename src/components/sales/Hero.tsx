@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, Check, Star, MessageCircle, Sparkles, Zap } from "lucide-react";
 import mockupImage from "@/assets/mockup-hero.png";
 
 const Hero = () => {
@@ -12,50 +12,96 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen gradient-hero overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-foreground/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-3xl" />
+    <section className="relative min-h-screen bg-background overflow-hidden">
+      {/* Futuristic Background with Neon Gradients */}
+      <div className="absolute inset-0">
+        {/* Main gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-futuristic opacity-80" />
+        
+        {/* Animated neon orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-neon-blue/20 rounded-full blur-3xl animate-pulse-neon" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/20 rounded-full blur-3xl animate-glow-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-cyan/10 rounded-full blur-3xl" />
+        
+        {/* Grid pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `linear-gradient(hsl(var(--neon-cyan)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--neon-cyan)) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }}
+        />
+        
+        {/* Floating particles effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-neon-cyan/60 rounded-full animate-shimmer"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="container relative z-10 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Column - Text Content */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left text-primary-foreground">
+          <div className="w-full lg:w-1/2 text-center lg:text-left animate-fade-in">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary-foreground/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-              <Star className="w-4 h-4 fill-orange text-orange" />
-              <span className="text-sm font-medium">+5.000 empreendedores já usam</span>
+            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 neon-border-cyan">
+              <Sparkles className="w-4 h-4 text-neon-cyan animate-pulse-neon" />
+              <span className="text-sm font-medium text-foreground">+5.000 empreendedores já usam</span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6">
-              Importadoras da 25 de Março{" "}
+            {/* Main Heading with Neon Effect */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-4">
+              <span className="text-foreground">Conheça a </span>
               <span className="relative inline-block">
-                no seu Bolso
+                <span className="bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple bg-clip-text text-transparent">
+                  SOPH
+                </span>
+                <div className="absolute -inset-2 bg-neon-cyan/20 blur-xl rounded-lg -z-10" />
+              </span>
+              <span className="text-foreground">: Sua Nova Sócia Digital que Trabalha </span>
+              <span className="relative inline-block text-neon-orange">
+                24h por Você
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 8C75 2 225 2 298 8" stroke="hsl(var(--accent))" strokeWidth="4" strokeLinecap="round"/>
+                  <path d="M2 8C75 2 225 2 298 8" stroke="hsl(var(--neon-orange))" strokeWidth="4" strokeLinecap="round"/>
                 </svg>
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            {/* Subtitle with Cyan Neon */}
+            <p className="text-xl md:text-2xl font-semibold text-neon-cyan mb-6">
+              Transformação digital sem complicação
+            </p>
+
+            <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Acesso direto às melhores Importadoras de atacado, preços exclusivos e oportunidades que você não encontra em nenhum outro lugar.
             </p>
 
-            {/* Benefits list */}
+            {/* Benefits list with neon styling */}
             <ul className="flex flex-col gap-3 mb-8" aria-label="Benefícios principais">
               {[
                 "Mais de 260 Importadoras verificadas",
                 "Contatos atualizados semanalmente",
                 "Suporte via WhatsApp Exclusivo",
               ].map((benefit, index) => (
-                <li key={index} className="flex items-center gap-3 justify-center lg:justify-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange flex items-center justify-center" aria-hidden="true">
-                    <Check className="w-4 h-4 text-orange-foreground" />
+                <li 
+                  key={index} 
+                  className="flex items-center gap-3 justify-center lg:justify-start animate-fade-in"
+                  style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+                >
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-neon-cyan/20 border border-neon-cyan/50 flex items-center justify-center glow-secondary" aria-hidden="true">
+                    <Check className="w-4 h-4 text-neon-cyan" />
                   </div>
-                  <span className="text-base md:text-lg">{benefit}</span>
+                  <span className="text-base md:text-lg text-foreground/90">{benefit}</span>
                 </li>
               ))}
             </ul>
@@ -63,35 +109,35 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                variant="hero" 
                 size="xl" 
                 onClick={scrollToPricing}
-                className="group text-base md:text-lg px-8"
+                className="group text-base md:text-lg px-8 bg-neon-orange hover:bg-neon-orange/90 text-background font-bold hover-glow-orange transition-all duration-300"
                 aria-label="Ver planos e preços"
               >
+                <Zap className="w-5 h-5 mr-2" aria-hidden="true" />
                 Quero Acesso Agora
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Button>
 
               <Button 
                 variant="outline" 
                 size="xl" 
                 onClick={scrollToTestimonials}
-                className="text-base md:text-lg px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="text-base md:text-lg px-8 border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:border-neon-cyan hover-glow transition-all duration-300"
                 aria-label="Ver depoimentos"
               >
-                <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                <MessageCircle className="w-5 h-5 mr-2" aria-hidden="true" />
                 Ver Depoimentos
               </Button>
             </div>
 
-            {/* Trust badges */}
-            <div className="flex items-center justify-center lg:justify-start gap-6 mt-10 pt-8 border-t border-primary-foreground/20">
+            {/* Trust badges with glass effect */}
+            <div className="flex items-center justify-center lg:justify-start gap-6 mt-10 pt-8 border-t border-neon-cyan/20">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <div 
                     key={i} 
-                    className="w-9 h-9 rounded-full bg-primary-foreground/30 border-2 border-primary-foreground flex items-center justify-center text-xs font-bold"
+                    className="w-9 h-9 rounded-full bg-neon-blue/30 border-2 border-neon-cyan/50 flex items-center justify-center text-xs font-bold text-foreground backdrop-blur-sm"
                   >
                     {String.fromCharCode(64 + i)}
                   </div>
@@ -100,22 +146,22 @@ const Hero = () => {
               <div className="text-left">
                 <div className="flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-4 h-4 fill-orange text-orange" />
+                    <Star key={i} className="w-4 h-4 fill-neon-orange text-neon-orange" />
                   ))}
                 </div>
-                <p className="text-sm text-primary-foreground/80">4.9/5 de mais de 2.300 avaliações</p>
+                <p className="text-sm text-foreground/70">4.9/5 de mais de 2.300 avaliações</p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Mockup */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          {/* Right Column - Futuristic Mockup */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              {/* Phone frame */}
+              {/* Phone frame with neon glow */}
               <div 
-                className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                className="relative bg-gray-900 rounded-[3rem] p-3 transform rotate-3 hover:rotate-0 transition-all duration-500 neon-border"
                 style={{
-                  boxShadow: '0 50px 100px -20px rgba(0, 0, 0, 0.4), 0 30px 60px -30px rgba(0, 0, 0, 0.3)'
+                  boxShadow: '0 0 60px hsl(var(--neon-cyan) / 0.3), 0 0 100px hsl(var(--neon-blue) / 0.2), 0 50px 100px -20px rgba(0, 0, 0, 0.5)'
                 }}
               >
                 {/* Phone notch */}
@@ -131,39 +177,50 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Phone button */}
+                {/* Phone buttons */}
                 <div className="absolute -right-1.5 top-32 w-1.5 h-12 bg-gray-700 rounded-r-lg" />
                 <div className="absolute -left-1.5 top-24 w-1.5 h-8 bg-gray-700 rounded-l-lg" />
                 <div className="absolute -left-1.5 top-36 w-1.5 h-16 bg-gray-700 rounded-l-lg" />
               </div>
 
-              {/* Floating badges */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-2xl px-4 py-2 shadow-xl animate-float">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-accent" />
+              {/* Floating badges with glass effect */}
+              <div className="absolute -top-4 -left-4 glass-card rounded-2xl px-4 py-3 neon-border-cyan animate-float">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-neon-cyan/20 flex items-center justify-center glow-secondary">
+                    <Check className="w-5 h-5 text-neon-cyan" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Fornecedores</p>
-                    <p className="text-sm font-bold text-foreground">260+</p>
+                    <p className="text-xs text-foreground/60">Fornecedores</p>
+                    <p className="text-lg font-bold text-neon-cyan">260+</p>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl px-4 py-2 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                    <Star className="w-4 h-4 text-green-600 fill-green-600" />
+              <div className="absolute -bottom-4 -right-4 glass-card rounded-2xl px-4 py-3 neon-border animate-float" style={{ animationDelay: '1s' }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-neon-orange/20 flex items-center justify-center glow-orange">
+                    <Star className="w-5 h-5 text-neon-orange fill-neon-orange" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">Avaliação</p>
-                    <p className="text-sm font-bold text-foreground">4.9/5</p>
+                    <p className="text-xs text-foreground/60">Avaliação</p>
+                    <p className="text-lg font-bold text-neon-orange">4.9/5</p>
                   </div>
                 </div>
               </div>
 
-              {/* Glow effect behind phone */}
-              <div className="absolute inset-0 bg-accent/30 rounded-full blur-3xl -z-10 scale-75" />
+              {/* AI Badge */}
+              <div className="absolute top-1/2 -left-8 glass-card rounded-2xl px-3 py-2 neon-border animate-float" style={{ animationDelay: '0.5s' }}>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-neon-purple animate-pulse-neon" />
+                  <span className="text-sm font-bold bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
+                    IA SOPH
+                  </span>
+                </div>
+              </div>
+
+              {/* Multiple glow effects behind phone */}
+              <div className="absolute inset-0 bg-neon-cyan/20 rounded-full blur-3xl -z-10 scale-90 animate-glow-pulse" />
+              <div className="absolute inset-0 bg-neon-purple/15 rounded-full blur-3xl -z-10 scale-75 animate-pulse-neon" style={{ animationDelay: '1s' }} />
             </div>
           </div>
         </div>
