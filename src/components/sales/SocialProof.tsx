@@ -1,47 +1,53 @@
-import { Star, Quote, Sparkles } from "lucide-react";
+import { Star, Quote, Sparkles, User } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Maria Santos",
-    role: "Revendedora de Acessórios",
-    content: "Em 2 meses usando o app, consegui triplicar meu lucro! Os fornecedores são reais e os preços são incríveis.",
+    name: "Alik Nunes",
+    role: "Cliente Verificada",
+    content: "O material é excelente! Extremamente organizado e com a relação dos melhores fornecedores. Amei demais! O atendimento também é excelente.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+    initials: "AN",
+    gradientClass: "from-neon-cyan to-neon-blue",
   },
   {
-    name: "Ana Paula Costa",
-    role: "Lojista de Moda",
-    content: "Melhor investimento que fiz pro meu negócio. Não preciso mais ir presencialmente pra achar fornecedores novos.",
+    name: "Elén Camargo",
+    role: "Revendedora",
+    content: "Não é golpe. Recebi a lista dos fornecedores e quando fui pessoalmente ao Brás, eles me ajudaram muito. Me deram dicas de compras e me orientaram. Indico o trabalho deles.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    initials: "EC",
+    gradientClass: "from-neon-purple to-neon-cyan",
   },
   {
-    name: "Carla Mendes",
-    role: "Empreendedora Digital",
-    content: "Comecei do zero e hoje faturo mais de R$15 mil por mês só com os contatos do app. Vale cada centavo!",
+    name: "Érica Oliveira",
+    role: "Revendedora",
+    content: "Estou enlouquecendo! Muita coisa linda e barata. Essa lista é uma mina de ouro pra quem revende!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face",
+    initials: "EO",
+    gradientClass: "from-neon-blue to-neon-purple",
   },
   {
-    name: "Juliana Ferreira",
-    role: "Vendedora Online",
-    content: "O grupo VIP do WhatsApp é ouro! As dicas que recebi lá me fizeram economizar milhares em compras erradas.",
+    name: "Papelaria Office",
+    role: "Lojista",
+    content: "Pode confiar. Você compra a lista, arquiva ela, e quando postam algo você pergunta o nome do fornecedor, consulta sua lista e entra em contato. Já comprei com 2 fornecedores e recebi tudo direitinho.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
+    initials: "PO",
+    gradientClass: "from-neon-orange to-neon-cyan",
   },
   {
-    name: "Fernanda Lima",
-    role: "Dropshipper",
-    content: "O suporte é sensacional! Me ajudaram a encontrar exatamente o fornecedor que eu precisava em menos de 24h.",
+    name: "Andréa Lopes",
+    role: "Cliente Verificada",
+    content: "Já consegui minha lista. Obrigada! Dinheiro bem gasto. Demais a lista de vocês!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
+    initials: "AL",
+    gradientClass: "from-neon-cyan to-neon-purple",
   },
   {
-    name: "Patrícia Oliveira",
-    role: "Comerciante",
-    content: "Já conhecia alguns fornecedores, mas o app me apresentou outros que nem sabia que existiam. Incrível!",
+    name: "Joseane",
+    role: "Paraná",
+    content: "Gente, pode comprar das lojas que estão na lista, é super confiável. Atenciosos, às vezes demoram para responder devido à demanda, mas vem tudo certinho. Com certeza comprarei mais. Fiz compras de Make e Acessórios.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&h=100&fit=crop&crop=face",
+    initials: "JS",
+    gradientClass: "from-neon-purple to-neon-blue",
   },
 ];
 
@@ -97,17 +103,14 @@ const SocialProof = () => {
                 "{testimonial.content}"
               </p>
 
-              {/* Author with glowing avatar */}
+              {/* Author with futuristic icon avatar */}
               <div className="flex items-center gap-4 pt-4 border-t border-neon-cyan/20">
                 <div className="relative">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={`Foto de ${testimonial.name}, ${testimonial.role}`}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-neon-cyan/50"
-                    loading="lazy"
-                    width={48}
-                    height={48}
-                  />
+                  <div 
+                    className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.gradientClass} flex items-center justify-center border-2 border-neon-cyan/50`}
+                  >
+                    <span className="text-background font-bold text-sm">{testimonial.initials}</span>
+                  </div>
                   <div className="absolute inset-0 rounded-full bg-neon-cyan/20 blur-md -z-10" />
                 </div>
                 <div>
