@@ -11,7 +11,7 @@ const plans = [
     description: "Para quem deseja experimentar com flexibilidade.",
     icon: Zap,
     features: [
-      "Acesso completo à Lista de Fornecedores",
+      "Acesso completo à Lista de Importadoras",
       "Atualizações semanais",
       "Suporte básico",
       "Cancelamento simples a qualquer momento",
@@ -30,7 +30,7 @@ const plans = [
     description: "Economize +80% e receba todos os benefícios completos.",
     icon: Crown,
     features: [
-      "Acesso completo à Lista de Fornecedores",
+      "Acesso completo à Lista de Importadoras",
       "Atualizações semanais ilimitadas",
       "Suporte prioritário",
       "Acesso total à SOPH — sua mentora de IA",
@@ -83,7 +83,7 @@ const Pricing = () => {
             </span>
           </h2>
           <p className="text-lg text-foreground/70">
-            Comece a lucrar hoje mesmo com acesso aos melhores fornecedores.
+            Comece a lucrar hoje mesmo com acesso às melhores importadoras.
           </p>
 
           {/* Urgency banner with neon */}

@@ -63,7 +63,7 @@ const Benefits = () => {
             </span>
           </h2>
           <p className="text-lg text-foreground/70">
-            Pare de perder tempo procurando fornecedores. Tenha acesso direto aos melhores
+            Pare de perder tempo procurando importadoras. Tenha acesso direto aos melhores
             contatos da 25 de Março.
           </p>
         </div>
@@ -93,7 +93,7 @@ const Benefits = () => {
         <div className="grid grid-cols-3 gap-8 mt-20 pt-16 border-t border-neon-cyan/20">
           {[
             { value: "5.000+", label: "Usuários ativos" },
-            { value: "260+", label: "Fornecedores" },
+            { value: "260+", label: "Importadoras" },
             { value: "98%", label: "Satisfação" },
           ].map((stat, index) => (
             <div 
