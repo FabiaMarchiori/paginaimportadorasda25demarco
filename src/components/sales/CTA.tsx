@@ -74,7 +74,8 @@ const CTA = () => {
             <Button
               size="xl"
               onClick={handleWhatsAppClick}
-              className="group text-lg px-10 bg-green-500/20 hover:bg-green-500/30 text-green-400 border border-green-500/50 hover:border-green-500 transition-all duration-300"
+              className="group text-lg px-10 bg-[hsl(142,100%,45%)] hover:bg-[hsl(142,100%,40%)] text-background font-bold transition-all duration-300"
+              style={{ boxShadow: '0 0 25px hsl(142 100% 45% / 0.5), 0 0 50px hsl(142 100% 45% / 0.3)' }}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               Falar no WhatsApp
