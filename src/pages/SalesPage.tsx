@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "@/components/sales/Hero";
+import VideoSection from "@/components/sales/VideoSection";
 import Benefits from "@/components/sales/Benefits";
 import BonusSophSection from "@/components/landing/BonusSophSection";
 import CategoriesSection from "@/components/sales/CategoriesSection";
@@ -102,6 +103,7 @@ const SalesPage = () => {
 
       <main>
         <Hero />
+        <VideoSection />
         <Benefits />
         <BonusSophSection />
         <CategoriesSection />
