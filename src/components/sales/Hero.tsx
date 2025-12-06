@@ -60,27 +60,22 @@ const Hero = () => {
             </div>
 
             {/* Main Heading with Neon Effect */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-4">
-              <span className="text-foreground">Conheça a </span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6">
+              <span className="text-foreground">Importadoras da </span>
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple bg-clip-text text-transparent">
-                  SOPH
+                  25 de Março
                 </span>
                 <div className="absolute -inset-2 bg-neon-cyan/20 blur-xl rounded-lg -z-10" />
               </span>
-              <span className="text-foreground">: Sua Nova Sócia Digital que Trabalha </span>
+              <span className="text-foreground"> no seu </span>
               <span className="relative inline-block text-neon-orange">
-                24h por Você
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 8C75 2 225 2 298 8" stroke="hsl(var(--neon-orange))" strokeWidth="4" strokeLinecap="round"/>
+                Bolso
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 150 12" fill="none">
+                  <path d="M2 8C40 2 110 2 148 8" stroke="hsl(var(--neon-orange))" strokeWidth="4" strokeLinecap="round"/>
                 </svg>
               </span>
             </h1>
-
-            {/* Subtitle with Cyan Neon */}
-            <p className="text-xl md:text-2xl font-semibold text-neon-cyan mb-6">
-              Transformação digital sem complicação
-            </p>
 
             <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Acesso direto às melhores Importadoras de atacado, preços exclusivos e oportunidades que você não encontra em nenhum outro lugar.
