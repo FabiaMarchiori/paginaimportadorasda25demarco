@@ -21,53 +21,53 @@ const professionalizationCards = [
   {
     icon: Building2,
     title: "Abrir MEI — sem contador",
-    description: "Economize até R$ 200 com contador.",
-    detail: "A SOPH te conduz por cada etapa, usando ferramentas simples que qualquer pessoa consegue fazer."
+    description: "Economize até R$ 200.",
+    detail: "A SOPH te guia com ferramentas simples que qualquer pessoa consegue usar."
   },
   {
     icon: Award,
     title: "Registrar Marca — sem advogado",
     description: "Economize entre R$ 900 e R$ 1.300.",
-    detail: "Passo a passo direto e claro, com vídeos e guias explicados pela própria SOPH."
+    detail: "Passo a passo direto e explicado pela SOPH."
   },
   {
     icon: Palette,
     title: "Logomarca Profissional — sem designer",
-    description: "Crie sua identidade visual completa.",
-    detail: "Usando ferramentas gratuitas fáceis de usar."
+    description: "Crie sua identidade visual com ferramentas gratuitas e fáceis.",
+    detail: ""
   },
   {
     icon: Globe,
     title: "Domínio e Site — sem programador",
-    description: "Registre seu domínio e monte sua página.",
-    detail: "A SOPH mostra como usar ferramentas simples, intuitivas e gratuitas — qualquer pessoa consegue fazer em poucos minutos."
+    description: "A SOPH mostra como registrar seu domínio e montar seu site usando ferramentas gratuitas e intuitivas.",
+    detail: ""
   }
 ];
 
 const salesItems = [
   {
     icon: ShoppingCart,
-    title: "Vender nos Marketplaces (Shopee, ML e outros)",
-    description: "Checklist completo: cadastro, aprovação, produtos, fotos e descrições."
+    title: "Vender nos Marketplaces",
+    description: "Checklist completo: cadastro, aprovação, produtos, fotos, descrições e primeiras vendas."
   },
   {
     icon: Share2,
     title: "Vendas nas Redes Sociais",
-    description: "Técnicas práticas para atrair clientes e fechar vendas rápido."
+    description: "Estratégias simples para captar clientes e vender todos os dias."
   },
   {
     icon: Target,
     title: "Estratégias de Crescimento",
-    description: "Como ajustar preços, margens e promoções para lucrar mais."
+    description: "Como ajustar preços, margens e produtos para lucrar mais."
   }
 ];
 
 const toolsInProgress = [
   "Fluxo de caixa",
-  "Ferramenta de precificação",
+  "Precificação",
   "Controle de estoque",
-  "Automação de atendimento",
-  "E muito mais…"
+  "Análises de vendas",
+  "Automações e muito mais…"
 ];
 
 const BonusSophSection = () => {
@@ -109,11 +109,11 @@ const BonusSophSection = () => {
             Conheça a <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">SOPH</span>: Sua Sócia Digital que Profissionaliza Seu Negócio 24h por Dia
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-            A primeira Inteligência Artificial do Brasil treinada para ajudar pequenos empreendedores a crescerem com organização, vendas e suporte contínuo — sem depender de contador, designer, advogado ou consultor.
+            A primeira Inteligência Artificial do Brasil criada para ajudar pequenos empreendedores a organizarem, profissionalizarem e crescerem sem depender de contador, designer, advogado ou consultores caros.
           </p>
           <p className="inline-flex items-center gap-2 text-xl md:text-2xl font-bold text-secondary">
             <DollarSign className="w-6 h-6" />
-            Economize até R$ 2.000 por ano realizando tudo com a ajuda da SOPH.
+            A SOPH te ajuda a economizar mais de R$ 3.000 por ano evitando serviços que você faria pagando profissionais.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ const BonusSophSection = () => {
           </h3>
           
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-            A SOPH mostra o caminho e as ferramentas — você só segue o passo a passo.
+            A SOPH mostra o caminho e as ferramentas — a maioria gratuitas e fáceis de usar. Você só segue o passo a passo.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -151,7 +151,7 @@ const BonusSophSection = () => {
                   
                   {/* Description */}
                   <p className="text-secondary font-semibold mb-2">{card.description}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{card.detail}</p>
+                  {card.detail && <p className="text-muted-foreground text-sm leading-relaxed">{card.detail}</p>}
                 </div>
               </div>
             ))}
@@ -192,7 +192,7 @@ const BonusSophSection = () => {
                 </div>
 
                 <p className="text-center text-secondary font-semibold text-lg">
-                  Com a SOPH você acelera suas vendas sem precisar de experiência.
+                  Com a SOPH você acelera suas vendas mesmo começando do zero.
                 </p>
               </div>
             </div>
@@ -217,7 +217,7 @@ const BonusSophSection = () => {
                 </h3>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Mentora digital sempre disponível. Respostas rápidas e claras para todas as suas dúvidas.
+                  Mentora digital sempre disponível para tirar dúvidas e orientar.
                 </p>
               </div>
             </div>
@@ -239,7 +239,7 @@ const BonusSophSection = () => {
                 </h3>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Guias práticos para aumentar margens e reduzir custos do seu negócio.
+                  Guias práticos para aumentar margem e reduzir desperdícios.
                 </p>
               </div>
             </div>
@@ -279,7 +279,14 @@ const BonusSophSection = () => {
         {/* Footer phrase */}
         <div className="mt-12 text-center">
           <p className="text-lg text-secondary font-semibold">
-            A SOPH cresce junto com você. Quanto mais usa, mais ferramentas libera.
+            A SOPH cresce junto com você — quanto mais você usa, mais ferramentas ela libera.
+          </p>
+        </div>
+        
+        {/* Frase reforço */}
+        <div className="mt-6 text-center">
+          <p className="text-muted-foreground">
+            Tudo com ferramentas gratuitas ou acessíveis, sem depender de ninguém.
           </p>
         </div>
 
