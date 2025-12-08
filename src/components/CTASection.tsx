@@ -46,7 +46,7 @@ const CTASection = () => {
             <Button
               variant="hero"
               size="xl"
-              onClick={() => window.open("https://pay.kiwify.com.br/348GxuG", "_blank")}
+              onClick={scrollToPricing}
               className="group"
             >
               Quero Começar Agora
