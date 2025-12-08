@@ -300,7 +300,7 @@ const BonusSophSection = () => {
             variant="hero" 
             size="xl" 
             className="hover-glow-orange animate-pulse-neon"
-            onClick={scrollToPricing}
+            onClick={() => window.open("https://pay.kiwify.com.br/348GxuG", "_blank")}
           >
             Quero a SOPH Agora
             <ArrowRight className="w-5 h-5 ml-2" />
