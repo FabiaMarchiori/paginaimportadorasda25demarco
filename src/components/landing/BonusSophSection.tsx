@@ -9,9 +9,11 @@ import {
   TrendingUp,
   Sparkles,
   Zap,
-  Shield,
-  BarChart3,
-  ArrowRight
+  DollarSign,
+  Wrench,
+  ArrowRight,
+  Target,
+  Share2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -19,56 +21,60 @@ const professionalizationCards = [
   {
     icon: Building2,
     title: "Abrir MEI — sem contador",
-    cta: "Começar Agora",
-    items: [
-      "Guia interativo para abrir sua MEI em menos de 15 minutos",
-      "Nada de pagar contador: tudo gratuito e explicado pela Soph",
-      "Configuração completa: atividade, impostos, benefícios e obrigações"
-    ]
+    description: "Economize até R$ 200 com contador.",
+    detail: "A SOPH te conduz por cada etapa, usando ferramentas simples que qualquer pessoa consegue fazer."
   },
   {
     icon: Award,
-    title: "Registro de Marca — sem advogado",
-    cta: "Proteger Marca",
-    items: [
-      "Passo a passo para registrar sua marca sem burocracia",
-      "Como economizar até R$ 1.000 fazendo tudo sozinha",
-      "Orientações sobre proteção legal e tipos de registro"
-    ]
+    title: "Registrar Marca — sem advogado",
+    description: "Economize entre R$ 900 e R$ 1.300.",
+    detail: "Passo a passo direto e claro, com vídeos e guias explicados pela própria SOPH."
   },
   {
     icon: Palette,
     title: "Logomarca Profissional — sem designer",
-    cta: "Criar Logo",
-    items: [
-      "Indicação de ferramentas gratuitas",
-      "Modelos e estilos recomendados por nicho",
-      "Guia para criar sua identidade visual do zero"
-    ]
+    description: "Crie sua identidade visual completa.",
+    detail: "Usando ferramentas gratuitas fáceis de usar."
   },
   {
     icon: Globe,
-    title: "Domínio & Presença Online — sem programador",
-    cta: "Ficar Online",
-    items: [
-      "Como registrar um domínio pelo menor preço possível",
-      "Como criar sua 'casa digital' sem saber nada de tecnologia",
-      "Orientações para página inicial, bio e contato profissional"
-    ]
+    title: "Domínio e Site — sem programador",
+    description: "Registre seu domínio e monte sua página.",
+    detail: "A SOPH mostra como usar ferramentas simples, intuitivas e gratuitas — qualquer pessoa consegue fazer em poucos minutos."
   }
 ];
 
-const marketplaceChecklist = [
-  "Conta criada e documentos aprovados",
-  "Primeiros produtos cadastrados",
-  "Fotos profissionais usando só o celular",
-  "Descrições completas e otimizadas",
-  "Preços ajustados com margem real",
-  "Embalagens preparadas",
-  "Fluxo de atendimento pronto"
+const salesItems = [
+  {
+    icon: ShoppingCart,
+    title: "Vender nos Marketplaces (Shopee, ML e outros)",
+    description: "Checklist completo: cadastro, aprovação, produtos, fotos e descrições."
+  },
+  {
+    icon: Share2,
+    title: "Vendas nas Redes Sociais",
+    description: "Técnicas práticas para atrair clientes e fechar vendas rápido."
+  },
+  {
+    icon: Target,
+    title: "Estratégias de Crescimento",
+    description: "Como ajustar preços, margens e promoções para lucrar mais."
+  }
+];
+
+const toolsInProgress = [
+  "Fluxo de caixa",
+  "Ferramenta de precificação",
+  "Controle de estoque",
+  "Automação de atendimento",
+  "E muito mais…"
 ];
 
 const BonusSophSection = () => {
+  const scrollToPricing = () => {
+    document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
       {/* Futuristic Background - Matching design system */}
@@ -99,26 +105,30 @@ const BonusSophSection = () => {
 
         {/* Main Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-            Conheça a <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">SOPH</span>: Sua Nova Sócia Digital que Trabalha 24h por Você
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+            Conheça a <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">SOPH</span>: Sua Sócia Digital que Profissionaliza Seu Negócio 24h por Dia
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-            Esqueça a burocracia e o medo de errar. A primeira Inteligência Artificial do Brasil treinada para pegar na sua mão e profissionalizar seu negócio do zero — sem que você gaste com contador, consultorias ou serviços caros.
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+            A primeira Inteligência Artificial do Brasil treinada para ajudar pequenos empreendedores a crescerem com organização, vendas e suporte contínuo — sem depender de contador, designer, advogado ou consultor.
           </p>
-          <p className="text-lg md:text-xl leading-relaxed">
-            <span className="text-secondary font-semibold">Soph não é um chatbot.</span>{" "}
-            <span className="text-muted-foreground">Ela é uma mentora digital prática, criada para transformar iniciantes em empreendedores organizados, seguros e lucrativos.</span>
+          <p className="inline-flex items-center gap-2 text-xl md:text-2xl font-bold text-secondary">
+            <DollarSign className="w-6 h-6" />
+            Economize até R$ 2.000 por ano realizando tudo com a ajuda da SOPH.
           </p>
         </div>
 
-        {/* SEÇÃO 1 — Profissionalização Sem Complicação */}
+        {/* SEÇÃO 1 — Profissionalização Rápida */}
         <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-12 flex items-center justify-center gap-3">
+          <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-4 flex items-center justify-center gap-3">
             <div className="p-2 rounded-xl bg-gradient-to-br from-primary to-secondary glow-primary">
               <Zap className="w-6 h-6 text-white" />
             </div>
-            <span>Profissionalização <span className="text-secondary">Sem Complicação</span></span>
+            <span>Profissionalização <span className="text-secondary">Rápida</span></span>
           </h3>
+          
+          <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+            A SOPH mostra o caminho e as ferramentas — você só segue o passo a passo.
+          </p>
           
           <div className="grid md:grid-cols-2 gap-6">
             {professionalizationCards.map((card, index) => (
@@ -134,36 +144,21 @@ const BonusSophSection = () => {
                   </div>
                   
                   {/* Title */}
-                  <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
                     {card.title}
                   </h4>
                   
-                  {/* Items */}
-                  <ul className="space-y-3 mb-6">
-                    {card.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground text-sm leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA Button */}
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-primary/50 text-primary hover:bg-primary/10 hover:border-primary group/btn"
-                  >
-                    {card.cta}
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
+                  {/* Description */}
+                  <p className="text-secondary font-semibold mb-2">{card.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{card.detail}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* SEÇÃO 2 — Vendendo nos Marketplaces */}
+        {/* SEÇÃO 2 — Vendas Inteligentes */}
         <div className="mb-20">
           <div className="relative rounded-3xl overflow-hidden glass-card neon-border-cyan">
             {/* Decorative glow */}
@@ -173,46 +168,39 @@ const BonusSophSection = () => {
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-primary flex items-center justify-center shadow-lg glow-secondary">
-                    <ShoppingCart className="w-8 h-8 text-white" />
+                    <TrendingUp className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    Vendendo nos <span className="text-secondary">Marketplaces</span>
+                    Vendas <span className="text-secondary">Inteligentes</span>
                   </h3>
                 </div>
                 
-                <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-                  A forma mais simples e prática de começar a vender na Shopee, Mercado Livre e outras — mesmo sem experiência. Com a Soph, você recebe um plano guiado para lançar seus produtos, otimizar anúncios e conseguir as primeiras vendas.
-                </p>
-                
-                {/* Checklist Grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {marketplaceChecklist.map((item, index) => (
+                {/* Sales Items Grid */}
+                <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                  {salesItems.map((item, index) => (
                     <div 
                       key={index}
-                      className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/10 hover:border-secondary/50 transition-all duration-300 hover:bg-white/10 group cursor-pointer"
+                      className="bg-white/5 rounded-xl p-5 border border-white/10 hover:border-secondary/50 transition-all duration-300 hover:bg-white/10 group"
                     >
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                        <Check className="w-4 h-4 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary/30 to-primary/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <item.icon className="w-6 h-6 text-secondary" />
                       </div>
-                      <span className="text-muted-foreground text-sm group-hover:text-white transition-colors">{item}</span>
+                      <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                      <p className="text-muted-foreground text-sm">{item.description}</p>
                     </div>
                   ))}
                 </div>
 
-                {/* CTA */}
-                <div className="mt-8 text-center">
-                  <Button variant="hero" size="lg" className="hover-glow-orange">
-                    Dominar os Marketplaces
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </div>
+                <p className="text-center text-secondary font-semibold text-lg">
+                  Com a SOPH você acelera suas vendas sem precisar de experiência.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* SEÇÃO 3 & 4 — Support & Profit Focus */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* SEÇÃO 3 — Mentoria & Gestão 24/7 */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Suporte Inteligente 24/7 */}
           <div className="group relative rounded-3xl overflow-hidden glass-card neon-border hover-glow">
             <div className="relative p-8 h-full">
@@ -224,28 +212,13 @@ const BonusSophSection = () => {
                   <MessageCircle className="w-8 h-8 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="text-2xl">🤝</span> Suporte Inteligente <span className="text-primary">24/7</span>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Suporte Inteligente <span className="text-primary">24/7</span>
                 </h3>
                 
-                <ul className="space-y-4 mb-6">
-                  {[
-                    "Mentoria digital sempre disponível",
-                    "Responde dúvidas e entrega materiais personalizados",
-                    "Linguagem simples, direta e acolhedora",
-                    "Recomenda o conteúdo certo conforme sua necessidade"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary mt-2 animate-pulse" style={{ animationDelay: `${i * 200}ms` }} />
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button variant="outline" className="w-full border-primary/50 text-primary hover:bg-primary/10 hover:border-primary">
-                  Conhecer o Suporte
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <p className="text-muted-foreground leading-relaxed">
+                  Mentora digital sempre disponível. Respostas rápidas e claras para todas as suas dúvidas.
+                </p>
               </div>
             </div>
           </div>
@@ -258,52 +231,73 @@ const BonusSophSection = () => {
               
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-[hsl(160,90%,50%)] flex items-center justify-center mb-6 shadow-lg glow-secondary">
-                  <TrendingUp className="w-8 h-8 text-white" />
+                  <DollarSign className="w-8 h-8 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="text-2xl">💰</span> Foco Total no <span className="text-secondary">Lucro</span>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Foco Total no <span className="text-secondary">Lucro</span>
                 </h3>
                 
-                <ul className="space-y-4 mb-6">
-                  {[
-                    { icon: Shield, text: "Estruturação profissional do negócio" },
-                    { icon: Zap, text: "Orientações para faturar com segurança" },
-                    { icon: BarChart3, text: "Estratégias para maximizar margens" },
-                    { icon: TrendingUp, text: "Crescimento estável e sustentável" }
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <item.icon className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{item.text}</span>
+                <p className="text-muted-foreground leading-relaxed">
+                  Guias práticos para aumentar margens e reduzir custos do seu negócio.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Ferramentas em Evolução */}
+          <div className="group relative rounded-3xl overflow-hidden glass-card neon-border hover-glow md:col-span-2 lg:col-span-1">
+            <div className="relative p-8 h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-3xl" />
+              
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6 shadow-lg">
+                  <Wrench className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Ferramentas em <span className="text-accent">Evolução</span>
+                </h3>
+                
+                <p className="text-muted-foreground mb-4">
+                  Como assinante, você recebe automaticamente novos módulos:
+                </p>
+                
+                <ul className="space-y-2">
+                  {toolsInProgress.map((tool, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Check className="w-4 h-4 text-accent flex-shrink-0" />
+                      {tool}
                     </li>
                   ))}
                 </ul>
-
-                <Button variant="outline" className="w-full border-secondary/50 text-secondary hover:bg-secondary/10 hover:border-secondary">
-                  Maximizar Lucros
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Footer phrase */}
+        <div className="mt-12 text-center">
+          <p className="text-lg text-secondary font-semibold">
+            A SOPH cresce junto com você. Quanto mais usa, mais ferramentas libera.
+          </p>
+        </div>
+
         {/* CTA Footer */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 glass-card neon-border px-8 py-5 rounded-2xl">
-            <Sparkles className="w-6 h-6 text-secondary animate-pulse" />
-            <p className="text-white font-medium text-lg">
-              Sua assinatura garante acesso total à <span className="text-secondary font-bold">Soph</span> — o futuro da sua parceria de negócios.
-            </p>
-          </div>
-          
+        <div className="mt-10 text-center">
           {/* Main CTA */}
-          <div className="mt-8">
-            <Button variant="hero" size="xl" className="hover-glow-orange animate-pulse-neon">
-              Quero a Soph Agora
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
+          <p className="text-muted-foreground mb-4">
+            Pronto para começar? Acesse agora e veja tudo por dentro.
+          </p>
+          <Button 
+            variant="hero" 
+            size="xl" 
+            className="hover-glow-orange animate-pulse-neon"
+            onClick={scrollToPricing}
+          >
+            Quero a SOPH Agora
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </div>
     </section>
