@@ -60,7 +60,7 @@ const CTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="xl"
-              onClick={() => window.open("https://pay.kiwify.com.br/348GxuG", "_blank")}
+              onClick={scrollToPricing}
               className="group text-lg px-10 bg-neon-orange hover:bg-neon-orange/90 text-background font-bold hover-glow-orange transition-all duration-300"
               aria-label="Ver planos e começar agora"
             >
