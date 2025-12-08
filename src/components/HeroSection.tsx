@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Smartphone, Star } from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToPricing = () => {
@@ -106,38 +106,12 @@ const HeroSection = () => {
               {/* Phone frame */}
               <div className="relative w-72 h-[580px] bg-foreground rounded-[3rem] p-3 shadow-2xl animate-float">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-foreground rounded-b-2xl z-10" />
-                <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden">
-                  {/* App screen content */}
-                  <div className="p-4 space-y-4">
-                    <div className="text-center pt-6 pb-4">
-                      <div className="w-16 h-16 gradient-hero rounded-2xl mx-auto mb-3 flex items-center justify-center">
-                        <Smartphone className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <h3 className="font-display font-bold text-foreground">Importadoras 25</h3>
-                      <p className="text-xs text-muted-foreground">Seu guia de fornecedores</p>
-                    </div>
-                    
-                    {/* Sample suppliers */}
-                    {[
-                      { name: "Loja Golden Import", cat: "Eletrônicos", rating: 4.8 },
-                      { name: "Casa dos Brinquedos", cat: "Brinquedos", rating: 4.9 },
-                      { name: "Mega Fashion SP", cat: "Vestuário", rating: 4.7 },
-                    ].map((supplier, i) => (
-                      <div key={i} className="bg-muted rounded-xl p-3 flex items-center gap-3">
-                        <div className="w-12 h-12 gradient-hero rounded-lg flex items-center justify-center text-primary-foreground font-bold">
-                          {supplier.name[0]}
-                        </div>
-                        <div className="flex-1">
-                          <p className="font-semibold text-sm text-foreground">{supplier.name}</p>
-                          <p className="text-xs text-muted-foreground">{supplier.cat}</p>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-3 h-3 fill-accent text-accent" />
-                          <span className="text-xs font-medium text-foreground">{supplier.rating}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
+                  <img 
+                    src="/assets/mockup-screen.png" 
+                    alt="Tela do app Importadoras 25 de Março" 
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
 
