@@ -7,10 +7,7 @@ const CTASection = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      "Olá! Tenho interesse no Importadoras da 25 de Março."
-    );
-    window.open(`https://wa.me/5511999999999?text=${message}`, "_blank");
+    window.open("https://abrir.link/hHPUP", "_blank");
   };
 
   return (
@@ -49,7 +46,7 @@ const CTASection = () => {
             <Button
               variant="hero"
               size="xl"
-              onClick={scrollToPricing}
+              onClick={() => window.open("https://pay.kiwify.com.br/348GxuG", "_blank")}
               className="group"
             >
               Quero Começar Agora

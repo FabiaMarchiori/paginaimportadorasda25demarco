@@ -7,10 +7,7 @@ const CTA = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      "Olá! Tenho interesse no App Importadoras da 25 de Março."
-    );
-    window.open(`https://wa.me/5511999999999?text=${message}`, "_blank");
+    window.open("https://abrir.link/hHPUP", "_blank");
   };
 
   return (
@@ -63,7 +60,7 @@ const CTA = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="xl"
-              onClick={scrollToPricing}
+              onClick={() => window.open("https://pay.kiwify.com.br/348GxuG", "_blank")}
               className="group text-lg px-10 bg-neon-orange hover:bg-neon-orange/90 text-background font-bold hover-glow-orange transition-all duration-300"
               aria-label="Ver planos e começar agora"
             >

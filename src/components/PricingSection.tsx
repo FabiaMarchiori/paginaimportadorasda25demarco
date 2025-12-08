@@ -58,11 +58,12 @@ const plans = [
 ];
 
 const PricingSection = () => {
-  const handleWhatsAppClick = (plan: string) => {
-    const message = encodeURIComponent(
-      `Olá! Tenho interesse no plano ${plan} do Importadoras da 25 de Março.`
-    );
-    window.open(`https://wa.me/5511999999999?text=${message}`, "_blank");
+  const handlePlanClick = (planName: string) => {
+    if (planName === "Premium" || planName === "Business") {
+      window.open("https://pay.kiwify.com.br/348GxuG", "_blank");
+    } else {
+      window.open("https://pay.kiwify.com.br/1N94Se2", "_blank");
+    }
   };
 
   return (
@@ -164,7 +165,7 @@ const PricingSection = () => {
                 variant={plan.popular ? "hero" : "outline"}
                 size="lg"
                 className="w-full"
-                onClick={() => handleWhatsAppClick(plan.name)}
+                onClick={() => handlePlanClick(plan.name)}
               >
                 {plan.cta}
               </Button>

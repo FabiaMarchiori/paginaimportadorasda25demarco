@@ -59,9 +59,12 @@ const Pricing = () => {
     price: string;
   } | null>(null);
 
-  const handlePlanSelect = (planKey: "mensal" | "anual", price: string) => {
-    setSelectedPlan({ key: planKey, price });
-    setFormOpen(true);
+  const handlePlanSelect = (planKey: "mensal" | "anual") => {
+    if (planKey === "anual") {
+      window.open("https://pay.kiwify.com.br/348GxuG", "_blank");
+    } else {
+      window.open("https://pay.kiwify.com.br/1N94Se2", "_blank");
+    }
   };
 
   return (
@@ -197,7 +200,7 @@ const Pricing = () => {
                     ? "bg-neon-orange hover:bg-neon-orange/90 text-background hover-glow-orange"
                     : "bg-neon-cyan/20 hover:bg-neon-cyan/30 text-neon-cyan border border-neon-cyan/50 hover-glow"
                 }`}
-                onClick={() => handlePlanSelect(plan.planKey, plan.price)}
+                onClick={() => handlePlanSelect(plan.planKey)}
               >
                 {plan.cta}
               </Button>
