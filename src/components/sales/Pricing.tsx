@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Zap, Crown, Sparkles } from "lucide-react";
-import LeadCaptureForm from "./LeadCaptureForm";
-
 const plans = [
   {
     name: "Plano Mensal",
@@ -53,12 +50,6 @@ const plans = [
 ];
 
 const Pricing = () => {
-  const [formOpen, setFormOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<{
-    key: "mensal" | "anual";
-    price: string;
-  } | null>(null);
-
   const handlePlanSelect = (planKey: "mensal" | "anual") => {
     if (planKey === "anual") {
       window.open("https://pay.kiwify.com.br/348GxuG", "_blank");
@@ -223,15 +214,6 @@ const Pricing = () => {
         </div>
       </div>
 
-      {/* Lead Capture Form */}
-      {selectedPlan && (
-        <LeadCaptureForm
-          open={formOpen}
-          onOpenChange={setFormOpen}
-          planSelected={selectedPlan.key}
-          planPrice={`R$${selectedPlan.price}`}
-        />
-      )}
     </section>
   );
 };
