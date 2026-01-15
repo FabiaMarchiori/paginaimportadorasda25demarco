@@ -22,10 +22,10 @@ const VideoSection = () => {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Two column layout - using flex for better vertical centering control */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 max-w-6xl mx-auto">
           
-          {/* Left Column - Text Content */}
-          <div className="flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 lg:flex-1">
+          {/* Text Content - First on mobile, left on desktop */}
+          <div className="flex flex-col justify-center text-center lg:text-left order-1 lg:order-1 lg:flex-1">
             {/* Title */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)]">
               Veja Como Funciona na Prática
@@ -37,8 +37,8 @@ const VideoSection = () => {
               te ajuda a encontrar fornecedores confiáveis e organiza tudo para você.
             </p>
 
-            {/* CTA Button */}
-            <div className="flex justify-center lg:justify-start">
+            {/* CTA Button - Desktop only */}
+            <div className="hidden lg:flex justify-center lg:justify-start">
               <Button
                 onClick={scrollToPricing}
                 size="lg"
@@ -50,8 +50,8 @@ const VideoSection = () => {
             </div>
           </div>
 
-          {/* Right Column - Tablet Mockup with Video */}
-          <div className="flex items-center justify-center order-1 lg:order-2 lg:flex-1">
+          {/* Mockup - Second on mobile, right on desktop */}
+          <div className="flex items-center justify-center order-2 lg:order-2 lg:flex-1">
             <div className="relative">
               {/* Glow effect behind tablet */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 rounded-[3rem] blur-xl opacity-50" />
@@ -77,6 +77,18 @@ const VideoSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* CTA Button - Mobile only */}
+          <div className="flex lg:hidden order-3 justify-center w-full">
+            <Button
+              onClick={scrollToPricing}
+              size="lg"
+              className="bg-gradient-to-r from-orange to-orange/80 hover:from-orange/90 hover:to-orange/70 text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-[0_0_30px_hsl(var(--orange)/0.4)] hover:shadow-[0_0_40px_hsl(var(--orange)/0.6)] transition-all duration-300 hover:scale-105"
+            >
+              <Play className="w-5 h-5 mr-2" />
+              Quero Começar Agora
+            </Button>
           </div>
         </div>
       </div>
