@@ -163,11 +163,11 @@ const Hero = () => {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10" />
                 
                 {/* Screen */}
-                <div className="relative bg-white rounded-[2.5rem] overflow-hidden" style={{ width: '280px', height: '580px' }}>
+                <div className="relative rounded-[2.5rem] overflow-hidden" style={{ width: '280px', height: '580px' }}>
                   <img 
                     src={mockupImage} 
                     alt="App Importadoras da 25 de Março - Tela de categorias" 
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
                     loading="eager"
                   />
                 </div>
