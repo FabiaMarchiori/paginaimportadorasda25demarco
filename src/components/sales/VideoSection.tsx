@@ -43,7 +43,7 @@ const VideoSection = () => {
             <div className="relative bg-background/80 backdrop-blur-sm rounded-2xl p-1 border border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.2)] group-hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transition-shadow duration-500">
               <div className="aspect-video rounded-xl overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/v9h6WHz066A?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/spTs-UeOA9U?rel=0&modestbranding=1"
                   title="Demonstração do App Importadoras 25 de Março"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
