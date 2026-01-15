@@ -21,44 +21,23 @@ const VideoSection = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
-        {/* Centered container with glow */}
-        <div className="max-w-4xl mx-auto">
-          {/* Title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-white mb-4 drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)]">
-            Veja Como Funciona na Prática
-          </h2>
+        {/* Two column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
+          
+          {/* Left Column - Text Content */}
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)]">
+              Veja Como Funciona na Prática
+            </h2>
 
-          {/* Subtitle */}
-          <p className="text-center text-white/80 text-base md:text-lg max-w-2xl mx-auto mt-2 mb-8">
-            Assista ao vídeo rápido e entenda como o aplicativo facilita suas compras, 
-            te ajuda a encontrar fornecedores confiáveis e organiza tudo para você.
-          </p>
-
-          {/* Video Player Container */}
-          <div className="relative group">
-            {/* Glow effect behind video */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 via-secondary/50 to-primary/50 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
-            
-            {/* Video wrapper */}
-            <div className="relative bg-background/80 backdrop-blur-sm rounded-2xl p-1 border border-primary/30 shadow-[0_0_40px_hsl(var(--primary)/0.2)] group-hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transition-shadow duration-500">
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <iframe
-                  src="https://www.youtube.com/embed/spTs-UeOA9U?rel=0&modestbranding=1"
-                  title="Demonstração do App Importadoras 25 de Março"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section below video */}
-          <div className="mt-10 text-center">
-            <p className="text-white/70 text-sm md:text-base mb-4">
-              Pronto para começar? Acesse agora e veja tudo por dentro.
+            {/* Subtitle */}
+            <p className="text-white/80 text-base md:text-lg max-w-md mx-auto lg:mx-0 mb-8">
+              Assista ao vídeo rápido e entenda como o aplicativo facilita suas compras, 
+              te ajuda a encontrar fornecedores confiáveis e organiza tudo para você.
             </p>
+
+            {/* CTA Button */}
             <Button
               onClick={scrollToPricing}
               size="lg"
@@ -67,6 +46,35 @@ const VideoSection = () => {
               <Play className="w-5 h-5 mr-2" />
               Quero Começar Agora
             </Button>
+          </div>
+
+          {/* Right Column - Tablet Mockup with Video */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative">
+              {/* Glow effect behind tablet */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/40 via-secondary/40 to-primary/40 rounded-[3rem] blur-xl opacity-50" />
+              
+              {/* Tablet Frame */}
+              <div className="relative bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl">
+                {/* Front camera */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-700 rounded-full" />
+                
+                {/* Screen with video */}
+                <div 
+                  className="relative rounded-[2rem] overflow-hidden bg-black"
+                  style={{ width: '280px', aspectRatio: '9/16' }}
+                >
+                  <iframe
+                    src="https://www.youtube.com/embed/spTs-UeOA9U?rel=0&modestbranding=1"
+                    title="Demonstração do App Importadoras 25 de Março"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
