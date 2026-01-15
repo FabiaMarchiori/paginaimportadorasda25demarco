@@ -139,7 +139,9 @@ const Pricing = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                 {plan.name}
               </h3>
-              <p className="text-sm sm:text-base text-foreground/60 mb-4 md:mb-6">{plan.description}</p>
+              <p className={`text-sm sm:text-base mb-4 md:mb-6 ${
+                plan.popular ? "text-white" : "text-foreground/60"
+              }`}>{plan.description}</p>
 
               {/* Price with gradient */}
               <div className="mb-4 md:mb-6">
@@ -148,10 +150,10 @@ const Pricing = () => {
                   <span className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent">
                     {plan.price}
                   </span>
-                  <span className="text-foreground/60">{plan.period}</span>
+                  <span className={plan.popular ? "text-white" : "text-foreground/60"}>{plan.period}</span>
                 </div>
                 {plan.priceEquivalent && (
-                  <p className="text-xs sm:text-sm text-neon-orange font-semibold mt-2">
+                  <p className="text-xs sm:text-sm font-bold mt-2" style={{ color: '#FF5722' }}>
                     {plan.priceEquivalent}
                   </p>
                 )}
@@ -170,7 +172,9 @@ const Pricing = () => {
                     >
                       <Check className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${plan.popular ? "text-background" : "text-neon-cyan"}`} />
                     </div>
-                    <span className="text-sm sm:text-base text-foreground/80">{feature}</span>
+                    <span className={`text-sm sm:text-base ${
+                      plan.popular ? "text-white font-medium" : "text-foreground/80"
+                    }`}>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -180,7 +184,7 @@ const Pricing = () => {
                 <p className="text-xs text-foreground/50 italic mb-4 md:mb-6">{plan.footnote}</p>
               )}
               {plan.closingText && (
-                <p className="text-xs sm:text-sm text-neon-cyan/80 font-medium mb-4 md:mb-6">{plan.closingText}</p>
+                <p className="text-xs sm:text-sm text-white font-medium mb-4 md:mb-6">{plan.closingText}</p>
               )}
 
               {/* CTA */}
@@ -188,9 +192,10 @@ const Pricing = () => {
                 size="lg"
                 className={`w-full text-sm sm:text-base font-bold transition-all duration-300 ${
                   plan.popular
-                    ? "bg-neon-orange hover:bg-neon-orange/90 text-background hover-glow-orange"
+                    ? "text-white hover-glow-orange hover:brightness-110"
                     : "bg-neon-cyan/20 hover:bg-neon-cyan/30 text-neon-cyan border border-neon-cyan/50 hover-glow"
                 }`}
+                style={plan.popular ? { backgroundColor: '#FF5722' } : undefined}
                 onClick={() => handlePlanSelect(plan.planKey)}
               >
                 {plan.cta}
