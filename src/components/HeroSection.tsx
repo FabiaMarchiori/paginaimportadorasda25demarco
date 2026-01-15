@@ -104,13 +104,13 @@ const HeroSection = () => {
           <div className="relative flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
               {/* Phone frame */}
-              <div className="relative w-72 h-[580px] bg-foreground rounded-[3rem] p-3 shadow-2xl animate-float">
+              <div className="relative w-72 h-[580px] bg-foreground rounded-[3rem] shadow-2xl animate-float">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-foreground rounded-b-2xl z-10" />
-                <div className="w-full h-full rounded-[2.5rem] overflow-hidden">
+                <div className="absolute inset-3 rounded-[2.5rem] overflow-hidden">
                   <img 
                     src="/assets/mockup-screen.png" 
                     alt="Tela do app Importadoras 25 de Março" 
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
