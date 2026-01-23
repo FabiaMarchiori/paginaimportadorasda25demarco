@@ -8,6 +8,7 @@ import CategoriesSection from "@/components/sales/CategoriesSection";
 import SocialProof from "@/components/sales/SocialProof";
 import Pricing from "@/components/sales/Pricing";
 import FAQ, { faqData } from "@/components/sales/FAQ";
+import FreeTrial from "@/components/sales/FreeTrial";
 import CTA from "@/components/sales/CTA";
 import Footer from "@/components/Footer";
 
@@ -110,6 +111,7 @@ const SalesPage = () => {
         <SocialProof />
         <Pricing />
         <FAQ />
+        <FreeTrial />
         <CTA />
         <Footer />
       </main>
