@@ -107,6 +107,7 @@ const SalesPage = () => {
         <VideoSection />
         <Benefits />
         <BonusSophSection />
+        <FreeTrial />
         <CategoriesSection />
         <SocialProof />
         <Pricing />
