@@ -1,0 +1,29 @@
+{
+  "name": "Importadoras da 25 de Março",
+  "short_name": "25 de Março",
+  "description": "Acesse os melhores fornecedores da 25 de Março direto no seu celular. Contatos verificados, preços de atacado e oportunidades exclusivas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#22B8CF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
